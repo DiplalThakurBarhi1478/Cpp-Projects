@@ -1,0 +1,20 @@
+cout << "Do you want to add the attendance? ";
+    cout << "Your answer : ";
+
+    while(true){
+        char add;
+
+        cin >> add;
+
+        try{
+            if(add !='y' && add != 'Y'){
+                throw invalid_argument("We only accept y or Y");
+            }
+            break;
+        }
+        catch(invalid_argument& e){
+            cout << e.what() << endl;
+        }
+    }
+
+
