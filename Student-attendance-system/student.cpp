@@ -17,5 +17,14 @@ void Student::display(){
     cout << rollNumber << " " << name << endl;
 }
 
+// for student attendacne
+    
+Student_attendance::Student_attendance(int rollNumber, string name, char Status):Student(rollNumber, name){
+        this->Status = Status;
+    }
 
-// Inside Search
+Student_attendance::Student_attendance():Student(rollNumber, name){
+    cout << "I am default constructor";
+}
+
+
