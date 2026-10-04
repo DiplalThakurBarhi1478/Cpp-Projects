@@ -7,14 +7,26 @@
 using namespace std;
 
 class Student {
-private:
+public:
     int rollNumber;
     string name;
 
-public:
     Student(int rollNumber, string name);
 
     void display();
+};
+
+
+
+// student attendance
+class Student_attendance : public Student
+{
+public:
+    char Status;
+    Student_attendance();
+
+    Student_attendance(int Roll_number, string full_name, char Status); 
+    /// this method updates the variable initialized inside the class.
 };
 
 #endif
