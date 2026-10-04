@@ -1,20 +1,35 @@
-cout << "Do you want to add the attendance? ";
-    cout << "Your answer : ";
+This project teaches me 
 
-    while(true){
-        char add;
+--------------------------------------------
+.h file --> declare class
+.cpp file --> define
+main.cpp file --> use it.
 
-        cin >> add;
+--------------------------------------------
 
-        try{
-            if(add !='y' && add != 'Y'){
-                throw invalid_argument("We only accept y or Y");
-            }
-            break;
-        }
-        catch(invalid_argument& e){
-            cout << e.what() << endl;
+main.cpp(call) --> attendance.cpp(define) --> attendance.h(declare)
+main.cpp(call) --> student.cpp(define) --> student.h(declare)
+
+--------------------------------------------
+
+
+
+
+
+
+
+
+--------------------------------------------
+Possible error:
+1. No default constructor
+2. while inheriting variable, be careful about calling the base class constructor 
+like:
+    class Student : public Person{
+        public:
+        void Student(string n1, string n2) : Person(o1, o2){
+            
         }
     }
 
-
+// n -> new
+// o -> old
