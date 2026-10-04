@@ -156,6 +156,8 @@ int main()
         {
             Attendance a1;
             a1.startingAttendance(studentNames);
+
+            a1.attendancePercentage();
             
         }
 

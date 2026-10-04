@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,8 +10,12 @@
 
 using namespace std;
 
+vector<Student_attendance> status_of_student;
+
 void Attendance::startingAttendance(const vector<string>& students)
 {
+    cout << endl;
+    
     cout << "Let's Start Attendance." << endl;
 
     cout << "Are you ready? "
@@ -19,21 +24,17 @@ void Attendance::startingAttendance(const vector<string>& students)
     int start;
     cin >> start;
 
-    vector<Student_attendance> status_of_student;
-
     if (start == 1)
     {
         char status;
 
-        for (int i{0};
-             i < students.size();
-             ++i)
+        for (int i{0};i < students.size();++i)
         {
             cout << "Roll Number: "
                  << i + 1
-                 << " "
+                 << "  "
                  << students[i]
-                 << " Status : ";
+                 << "  Status  : ";
 
             while (true)
             {
@@ -61,16 +62,18 @@ void Attendance::startingAttendance(const vector<string>& students)
 
             status_of_student.emplace_back(i + 1,students[i],status);
         }
+    }
+}
 
-        cout << endl;
+
+void Attendance::attendancePercentage(){
+cout << endl;
         cout << "Today's Attendance!" << endl;
 
         int count_absent{0};
         int count_present{0};
 
-        for (int j{0};
-             j < students.size();
-             ++j)
+        for (int j{0}; j <status_of_student.size();++j)
         {
             cout << "Roll Number: "
                  << status_of_student[j].rollNumber
@@ -103,5 +106,5 @@ void Attendance::startingAttendance(const vector<string>& students)
         cout << "Total Absent : "
              << count_absent
              << endl;
-    }
 }
+

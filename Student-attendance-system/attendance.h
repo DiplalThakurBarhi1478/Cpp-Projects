@@ -10,6 +10,9 @@ class Attendance{
 public:
 
     void startingAttendance(const vector<string>& students);
+
+
+    void attendancePercentage();
 };
 
 #endif
